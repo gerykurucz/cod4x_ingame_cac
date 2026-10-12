@@ -1,0 +1,58 @@
+/*
+  Copyright (c) 2009-2017 Andreas Göransson <andreas.goransson@gmail.com>
+  Copyright (c) 2009-2017 Indrek Ardel <indrek@ardel.eu>
+
+  This file is part of Call of Duty 4 Promod.
+
+  Call of Duty 4 Promod is licensed under Promod Modder Ethical Public License.
+  Terms of license can be found in LICENSE.md document bundled with the project.
+*/
+
+#include "ui/menudef.h"
+
+{
+	menuDef
+	{
+		name			"scoreboard"
+		rect			0 0 640 480
+
+		itemDef
+		{
+			rect		-3 4 1 1 HORIZONTAL_ALIGN_RIGHT VERTICAL_ALIGN_TOP
+			origin		0 22
+			exp text	( secondsAsCountdown( timeLeft() ) );
+			textfont	UI_FONT_OBJECTIVE
+			textscale	0.4
+			textalign	ITEM_ALIGN_RIGHT
+			textstyle	ITEM_TEXTSTYLE_SHADOWEDMORE
+			visible		when ( timeLeft() >= 60 );
+			decoration
+		}
+		itemDef
+		{
+			rect		-3 4 1 1 HORIZONTAL_ALIGN_RIGHT VERTICAL_ALIGN_TOP
+			origin		0 22
+			exp text	( secondsAsCountdown( timeLeft() ) );
+			textfont	UI_FONT_OBJECTIVE
+			textscale	0.4
+			textalign	ITEM_ALIGN_RIGHT
+			textstyle	ITEM_TEXTSTYLE_SHADOWEDMORE
+			forecolor	1 0.75 0 1
+			visible		when ( timeLeft() >= 10 && timeLeft() < 60 );
+			decoration
+		}
+		itemDef
+		{
+			rect		-3 4 1 1 HORIZONTAL_ALIGN_RIGHT VERTICAL_ALIGN_TOP
+			origin		0 22
+			exp text	( secondsAsCountdown( timeLeft() ) );
+			textfont	UI_FONT_OBJECTIVE
+			textscale	0.4
+			textalign	ITEM_ALIGN_RIGHT
+			textstyle	ITEM_TEXTSTYLE_SHADOWEDMORE
+			forecolor	1 0.5 0 1
+			visible		when ( timeLeft() >= 0 && timeLeft() < 10 );
+			decoration
+		}
+	}
+}
